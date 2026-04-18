@@ -1,0 +1,222 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  user-select: none;
+}
+body {
+  background-color: #0f172a;
+  color: #ffffff;
+  font-family: "Inter", sans-serif;
+}
+#Screen {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  z-index: 0;
+}
+#MouseEffect {
+  width: 210px;
+  height: 210px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99;
+  background: radial-gradient(
+    circle,
+    rgba(59, 131, 246, 0.35) 0%,
+    rgba(59, 131, 246, 0.15) 40%,
+    rgba(59, 131, 246, 0) 70%
+  );
+
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+
+  filter: blur(6px);
+  mix-blend-mode: screen;
+  opacity: 0.6;
+}
+/* header */
+header {
+  width: 100%;
+  height: 20vh;
+  font-family: "Sekuya", system-ui;
+  font-weight: 700;
+  font-style: normal;
+  position: fixed;
+}
+nav h3 {
+  font-size: 2em;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 40px;
+  height: 100%;
+}
+ul {
+  display: flex;
+  gap: 150px;
+  align-items: center;
+}
+ul li a {
+  color: #ffffffa8;
+  position: relative;
+  padding: 15px 30px;
+}
+ul li a.active {
+  color: #ffffff;
+}
+ul li a::after {
+  content: "";
+  background: url("https://kareem-gamal.vercel.app/_next/static/media/menu-hover-shape.12d6f58f.webp");
+  inset: 0;
+  position: absolute;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: 0.3s;
+}
+ul li a.active::after {
+  opacity: 1;
+}
+ul li a:hover:after {
+  opacity: 1;
+}
+ul button {
+  border: none;
+  background: none;
+  color: #ffffff;
+  font-size: 0.8em;
+  border: 0.6px solid #2699ad;
+  padding: 15px 30px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+ul button:hover {
+  background-color: #217f8f;
+}
+#bars {
+  display: none;
+}
+#Close {
+  display: none;
+}
+@media screen and (max-width: 1840px) {
+  nav {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 1644px) {
+  ul {
+    gap: 100px;
+  }
+}
+@media screen and (max-width: 1386px) {
+  nav {
+    font-size: 28px;
+  }
+  ul {
+    gap: 80px;
+  }
+}
+@media screen and (max-width: 1284px) {
+  nav {
+    font-size: 25px;
+  }
+  ul {
+    gap: 70px;
+  }
+}
+@media screen and (max-width: 1040px) {
+  nav {
+    justify-content: space-between;
+    padding: 0px 120px;
+  }
+  ul {
+    position: fixed;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 50%;
+
+    top: 0;
+    right: 0;
+    background-color: #0d1323;
+    box-shadow: 0 0 60px #0d1323;
+    transform: scaleX(0);
+    transition: 0.3s;
+    transform-origin: right;
+  }
+  ul.active {
+    transform: scaleX(1);
+  }
+  ul li {
+    display: flex;
+    align-items: self-start;
+    width: 100%;
+    padding-left: 50px;
+  }
+  #bars {
+    display: flex;
+  }
+  #Close {
+    font-size: 0.8em;
+    display: flex;
+    width: 55px;
+    height: 55px;
+    border: 1px solid rgba(255, 255, 255, 0.432);
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    align-self: flex-end;
+    margin-right: 50px;
+  }
+  ul button {
+    padding: 20px 0;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 658px) {
+  nav {
+    font-size: 20px;
+  }
+  ul {
+    gap: 70px;
+    width: 50%;
+  }
+  #bars {
+    display: flex;
+    margin-right: -30px;
+  }
+  nav h3 {
+    margin-left: -30px;
+  }
+    ul button {
+      font-size: 0.7em;
+    padding: 20px 0;
+    width: 80%;
+  }
+}
+@media screen and (max-width: 516px) {
+  nav {
+    font-size: 13px;
+  }
+  ul {
+    gap: 70px;
+  }
+  #bars {
+    display: flex;
+    font-size:  2em;
+    margin-right: -40px;
+  }
+  nav h3 {
+    margin-left: -40px;
+  }
+}
+/* Home */
