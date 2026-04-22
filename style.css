@@ -28,7 +28,7 @@ body {
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 9999;
+  z-index: 10000;
   background: radial-gradient(
     circle,
     rgba(59, 131, 246, 0.35) 0%,
@@ -50,7 +50,7 @@ header {
   font-optical-sizing: auto;
   font-style: normal;
   position: fixed;
-  z-index: 10000;
+  z-index: 9999;
   background: rgba(0, 0, 0, 0);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
@@ -158,20 +158,19 @@ ul button:hover {
   ul {
     position: fixed;
     flex-direction: column;
-    height: 100%;
+    height: 100vh;
     justify-content: center;
     width: 50%;
     top: 0;
     right: 0;
     background-color: #0d1323;
     box-shadow: 0 0 60px #0d1323;
-    transform: translateX(100%);
+    transform: scaleX(0);
     transition: 0.3s;
     transform-origin: right;
-    z-index: 999999;
   }
   ul.active {
-    transform: translateX(0);
+    transform: scaleX(1);
   }
   ul li {
     display: flex;
@@ -202,9 +201,13 @@ ul button:hover {
   }
 }
 @media screen and (max-width: 658px) {
+  header {
+    height: 10vh;
+  }
   nav {
     font-size: 25px;
     justify-content: space-between;
+    margin-top: 10px;
   }
   ul {
     gap: 70px;
@@ -232,8 +235,11 @@ ul button:hover {
 }
 
 @media screen and (max-width: 516px) {
+  header {
+    height: 8vh;
+  }
   nav {
-    font-size: 20px;
+    font-size: 16px;
   }
   ul {
     gap: 70px;
