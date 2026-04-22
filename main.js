@@ -11,10 +11,24 @@ window.addEventListener('mousemove', function(e) {
 
 bars.addEventListener('click', function() {
     menu.classList.add("active")
+updateScreen() 
+
 })
 Close.addEventListener('click', function() {
     menu.classList.remove("active")
+updateScreen() 
+
 })
 Screen.addEventListener('click', function() {
     menu.classList.remove("active")
+updateScreen() 
+
 })
+function updateScreen() {
+  if (menu.classList.contains("active")) {
+    Screen.style.pointerEvents = "auto";
+  } else {
+    Screen.style.pointerEvents = "none";
+  }
+}
+updateScreen() 

@@ -12,12 +12,14 @@ body {
   font-family: "Sekuya", system-ui;
   font-weight: 400;
   font-style: normal;
+  overflow: hidden;
 }
 #Screen {
   position: fixed;
   height: 100vh;
   width: 100%;
   z-index: 0;
+  pointer-events: none;
 }
 #MouseEffect {
   width: 210px;
@@ -26,7 +28,7 @@ body {
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 99;
+  z-index: 9999;
   background: radial-gradient(
     circle,
     rgba(59, 131, 246, 0.35) 0%,
@@ -36,7 +38,6 @@ body {
 
   border-radius: 50%;
   transform: translate(-50%, -50%);
-
   filter: blur(6px);
   mix-blend-mode: screen;
   opacity: 0.6;
@@ -44,11 +45,12 @@ body {
 /* header */
 header {
   width: 100%;
-  height: 20vh;
+  height: 15vh;
   font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-style: normal;
   position: fixed;
+  z-index: 10000;
 }
 nav h3 {
   font-size: 2em;
@@ -57,13 +59,14 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 40px;
+  font-size: 25px;
   height: 100%;
 }
 ul {
   display: flex;
   gap: 150px;
   align-items: center;
+  z-index: 9999;
 }
 ul li a {
   color: #ffffffa8;
@@ -84,6 +87,7 @@ ul li a::after {
   transform-origin: left;
   transform: scaleX(0);
   transition: 0.3s;
+  z-index: 9999;
 }
 ul li a.active::after {
   transform: scaleX(1);
@@ -103,7 +107,7 @@ ul button {
   padding: 15px 30px;
   border-radius: 20px;
   transition: 0.3s;
-  margin-left: 100px;
+  margin-left: 10em;
 }
 ul button:hover {
   background-color: #217f8f;
@@ -117,6 +121,9 @@ ul button:hover {
 @media screen and (max-width: 1840px) {
   nav {
     font-size: 35px;
+  }
+  ul button {
+    margin-left: 5em;
   }
 }
 @media screen and (max-width: 1644px) {
@@ -155,12 +162,13 @@ ul button:hover {
     right: 0;
     background-color: #0d1323;
     box-shadow: 0 0 60px #0d1323;
-    transform: scaleX(0);
+    transform: translateX(100%);
     transition: 0.3s;
     transform-origin: right;
+    z-index: 999999;
   }
   ul.active {
-    transform: scaleX(1);
+    transform: translateX(0);
   }
   ul li {
     display: flex;
@@ -243,12 +251,13 @@ ul button:hover {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  z-index: 1;
 }
 #text {
   font-size: 40px;
 }
 #text h1 {
-  font-size: 0.5em;
+  font-size: 0.6em;
   line-height: 65px;
   color: #0abfd7;
 }
@@ -258,7 +267,7 @@ p {
 }
 #text h1 span {
   display: block;
-  font-size: 4em;
+  font-size: 3.2em;
   background: linear-gradient(
     90deg,
     #ffffff,
@@ -274,11 +283,69 @@ p {
   color: transparent;
   letter-spacing: 5px;
 }
-#text button{
-  font-size: 0.7em;
-  padding: 10px 70px;
-  background-color: #00899b;
+#text button {
+  font-size: 0.5em;
+  padding: 10px 50px;
+  background-color: #00a9bf;
   color: white;
   border-radius: 20px;
   border: none;
+  transition: 0.3s;
+}
+#text button:nth-of-type(2) {
+  background: transparent;
+  border: 2px solid rgba(89, 89, 89, 0.63);
+}
+#text button:nth-of-type(2):hover {
+  transform: scale(1.05);
+  background-color: rgba(128, 128, 128, 0.271);
+  box-shadow: 0 0 5px #000000;
+}
+#text button:hover {
+  transform: scale(1.05);
+  background-color: #00cbe6;
+  box-shadow: 0 0 5px #00a9bf;
+}
+#home img {
+  position: relative;
+  z-index: 1;
+  pointer-events: none;
+}
+.icons {
+  display: flex;
+  justify-content: space-around;
+  position: relative;
+  bottom: 20px;
+  z-index: 2;
+}
+.icons h2 {
+  border: 2px solid #00899b;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #0f172a;
+  transition: 0.3s;
+}
+.icons h2:nth-of-type(1):hover {
+  background-color: rgb(230, 0, 184);
+  border: 2px solid white;
+  transform: scale(1.1);
+  box-shadow: 0 0 100px rgb(230, 0, 184);
+}
+.icons h2:nth-of-type(2):hover {
+  background-color: rgb(253, 0, 0);
+  border: 2px solid white;
+  transform: scale(1.1);
+  box-shadow: 0 0 100px rgb(253, 0, 0);
+}
+.icons h2:nth-of-type(3):hover {
+  background-color: rgb(0, 72, 188);
+  border: 2px solid white;
+  transform: scale(1.1);
+  box-shadow: 0 0 100px rgb(0, 72, 188);
+}
+.icons h2:nth-of-type(4):hover {
+  background-color: rgb(20, 110, 255);
+  border: 2px solid white;
+  transform: scale(1.1);
+  box-shadow: 0 0 100px rgb(20, 110, 255);
 }
