@@ -12,7 +12,7 @@ body {
   font-family: "Sekuya", system-ui;
   font-weight: 400;
   font-style: normal;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 #Screen {
   position: fixed;
@@ -51,6 +51,9 @@ header {
   font-style: normal;
   position: fixed;
   z-index: 10000;
+  background: rgba(0, 0, 0, 0);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 nav h3 {
   font-size: 2em;
@@ -310,6 +313,7 @@ p {
   position: relative;
   z-index: 1;
   pointer-events: none;
+  width: 25rem;
 }
 .icons {
   display: flex;
@@ -348,4 +352,140 @@ p {
   border: 2px solid white;
   transform: scale(1.1);
   box-shadow: 0 0 100px rgb(20, 110, 255);
+}
+/* Media Quiry */
+
+@media screen and (max-width: 1647px) {
+  #text {
+    font-size: 35px;
+  }
+  #home img {
+    width: 27rem;
+  }
+}
+@media screen and (max-width: 1267px) {
+  #text {
+    font-size: 28px;
+  }
+  #home img {
+    width: 23rem;
+  }
+}
+@media screen and (max-width: 1106px) {
+  #home {
+    flex-direction: column;
+    height: 150vh;
+    justify-content: center;
+    text-align: center;
+  }
+  #text h1 {
+    font-size: 1.4em;
+    line-height: 60px;
+  }
+    #text h1 span {
+      font-size: 1.5em;
+    }
+  #text {
+    font-size: 32px;
+  }
+  #home img {
+    width: 25rem;
+  }
+}
+@media screen and (max-width: 446px) {
+  #text h1 {
+    font-size: 1.2em;
+    line-height: 60px;
+
+  }
+    #text h1 span {
+      font-size: 1.5em;
+    }
+    #text p {
+      margin-top: 0;
+      line-height: 40px;
+    }
+}
+@media screen and (max-width: 406px) {
+  #text h1 {
+    font-size: 1em;
+    line-height: 60px;
+
+  }
+    #text h1 span {
+      font-size: 1.5em;
+    }
+    #text p {
+      margin-top: 0;
+      line-height: 40px;
+    }
+}
+@media screen and (max-width: 716px) {
+  #home {
+    flex-direction: column;
+    height: 120vh;
+    justify-content: center;
+    text-align: center;
+  }
+  #text {
+    font-size: 25px;
+  }
+  #home img {
+    width: 18rem;
+  }
+  #text h1 {
+    line-height: 40px;
+  }
+  .icons {
+    font-size: 20px;
+  }
+  .icons h2 {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 528px) {
+  #home {
+    flex-direction: column;
+    height: 110vh;
+    justify-content: center;
+    text-align: center;
+  }
+  #text {
+    font-size: 22px;
+  }
+  #text h1 {
+    line-height: 40px;
+  }
+  #home img {
+    width: 15rem;
+  }
+  .icons {
+    font-size: 15px;
+  }
+  .icons h2 {
+    font-size: 1em;
+  }
+}
+@media screen and (max-width: 434px) {
+  #home {
+    flex-direction: column;
+    height: 110vh;
+    justify-content: center;
+    text-align: center;
+  }
+  #text {
+    font-size: 19px;
+  }
+  #text h1 {
+    line-height: 30px;
+  }
+  #home img {
+    width: 15rem;
+  }
+  .icons {
+    font-size: 15px;
+  }
+  .icons h2 {
+    font-size: 1em;
+  }
 }
