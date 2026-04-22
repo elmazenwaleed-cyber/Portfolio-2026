@@ -9,7 +9,9 @@
 body {
   background-color: #0f172a;
   color: #ffffff;
-  font-family: "Inter", sans-serif;
+  font-family: "Sekuya", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 #Screen {
   position: fixed;
@@ -43,8 +45,8 @@ body {
 header {
   width: 100%;
   height: 20vh;
-  font-family: "Sekuya", system-ui;
-  font-weight: 700;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
   font-style: normal;
   position: fixed;
 }
@@ -66,27 +68,31 @@ ul {
 ul li a {
   color: #ffffffa8;
   position: relative;
-  padding: 15px 30px;
 }
 ul li a.active {
   color: #ffffff;
 }
 ul li a::after {
   content: "";
-  background: url("https://kareem-gamal.vercel.app/_next/static/media/menu-hover-shape.12d6f58f.webp");
-  inset: 0;
+  background-color: #24dcfd65;
+  width: 100%;
   position: absolute;
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0;
+  height: 5px;
+  left: 0;
+  bottom: -10px;
+  border-radius: 50px;
+  transform-origin: left;
+  transform: scaleX(0);
   transition: 0.3s;
 }
 ul li a.active::after {
-  opacity: 1;
+  transform: scaleX(1);
 }
 ul li a:hover:after {
-  opacity: 1;
+  transform: scaleX(1);
+}
+ul li a:hover {
+  color: #ffffff;
 }
 ul button {
   border: none;
@@ -97,6 +103,7 @@ ul button {
   padding: 15px 30px;
   border-radius: 20px;
   transition: 0.3s;
+  margin-left: 100px;
 }
 ul button:hover {
   background-color: #217f8f;
@@ -163,6 +170,7 @@ ul button:hover {
   }
   #bars {
     display: flex;
+    font-size: 1.5em;
   }
   #Close {
     font-size: 0.8em;
@@ -179,6 +187,7 @@ ul button:hover {
   ul button {
     padding: 20px 0;
     width: 80%;
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 658px) {
@@ -200,16 +209,17 @@ ul button:hover {
   nav h3 {
     margin-left: -50px;
   }
-    ul button {
-      font-size: 0.7em;
+  ul button {
+    font-size: 0.7em;
     padding: 20px 0;
     width: 80%;
   }
-    #Close  {
-      width: 50px;
-      height: 50px;
-    }
+  #Close {
+    width: 50px;
+    height: 50px;
+  }
 }
+
 @media screen and (max-width: 516px) {
   nav {
     font-size: 20px;
@@ -219,26 +229,7 @@ ul button:hover {
   }
   #bars {
     display: flex;
-    font-size:  2em;
-    margin-right: -70px;
-  }
-  nav h3 {
-    margin-left: -70px;
-  }
-    ul li {
-    padding-left: 30px;
-  }
-}
-@media screen and (max-width: 516px) {
-  nav {
-    font-size: 20px;
-  }
-  ul {
-    gap: 70px;
-  }
-  #bars {
-    display: flex;
-    font-size:  2em;
+    font-size: 2em;
     margin-right: -70px;
   }
   nav h3 {
@@ -246,3 +237,48 @@ ul button:hover {
   }
 }
 /* Home */
+#home {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#text {
+  font-size: 40px;
+}
+#text h1 {
+  font-size: 0.5em;
+  line-height: 65px;
+  color: #0abfd7;
+}
+p {
+  line-height: 70px;
+  font-size: 0.7em;
+}
+#text h1 span {
+  display: block;
+  font-size: 4em;
+  background: linear-gradient(
+    90deg,
+    #ffffff,
+    #1fb4ff,
+    rgb(0, 188, 209),
+    #ffffff,
+    #1fb4ff,
+    rgb(0, 188, 209),
+    rgb(0, 146, 162)
+  );
+  text-shadow: 0px 0 50px #0abfd7;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 5px;
+}
+#text button{
+  font-size: 0.7em;
+  padding: 10px 70px;
+  background-color: #00899b;
+  color: white;
+  border-radius: 20px;
+  border: none;
+}
