@@ -31,4 +31,5 @@ function updateScreen() {
     Screen.style.pointerEvents = "none";
   }
 }
-updateScreen() 
+
+updateScreen()

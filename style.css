@@ -62,7 +62,7 @@ nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 25px;
+  font-size: 27px;
   height: 100%;
 }
 ul {
@@ -183,7 +183,7 @@ ul button:hover {
     font-size: 1.5em;
   }
   #Close {
-    font-size: 0.8em;
+    font-size: 0.9em;
     display: flex;
     width: 55px;
     height: 55px;
@@ -380,7 +380,7 @@ p {
 @media screen and (max-width: 1106px) {
   #home {
     flex-direction: column;
-    height: 150vh;
+    height: 170vh;
     justify-content: center;
     text-align: center;
   }
@@ -399,6 +399,10 @@ p {
   }
 }
 @media screen and (max-width: 446px) {
+  home {
+    height: 130vh;
+
+  }
   #text h1 {
     font-size: 1.2em;
     line-height: 60px;
@@ -429,7 +433,7 @@ p {
 @media screen and (max-width: 716px) {
   #home {
     flex-direction: column;
-    height: 120vh;
+    height: 150vh;
     justify-content: center;
     text-align: center;
   }
@@ -452,7 +456,7 @@ p {
 @media screen and (max-width: 528px) {
   #home {
     flex-direction: column;
-    height: 110vh;
+    height: 130vh;
     justify-content: center;
     text-align: center;
   }
@@ -475,7 +479,7 @@ p {
 @media screen and (max-width: 434px) {
   #home {
     flex-direction: column;
-    height: 110vh;
+    height: 120vh;
     justify-content: center;
     text-align: center;
   }
@@ -494,4 +498,15 @@ p {
   .icons h2 {
     font-size: 1em;
   }
+}
+/* knowMe */
+#knowMe {
+  width: 100%;
+  height: 60vh;
+}
+#container {
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 50px #0c121f;
+  background-color: #0c121f;
 }
